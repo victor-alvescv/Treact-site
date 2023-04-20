@@ -794,7 +794,7 @@ header .row {
   padding-top: 1rem;
   padding-bottom: 1rem;
   transition: all 300ms ease;
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .pricing__business__btn:hover {
@@ -1287,6 +1287,10 @@ header .row {
   display: block;
 }
 
+.mobile__nav--content {
+  display: none;
+}
+
 @media (max-width: 1280px) {
   .header__title {
     font-size: 36px;
@@ -1329,10 +1333,112 @@ header .row {
     display: none;
   }
 
+  #header .mobile__nav {
+    display: initial;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  .mobile__nav--content.active {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    z-index: 10;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    margin: 0px;
+    display: block;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+  }
+
+  .mobile__nav--content {
+    display: none;
+  }
+
+  .mobile__nav--wrapper {
+    background-color: #fff;
+    border: 1px solid rgb(230, 230, 230);
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    margin: 1.5rem 1rem;
+    position: relative;
+  }
+
+  .mobile__nav {
+    display: flex;
+    flex-direction: column;
+    display: inline-block;
+  }
+
+  .mobile__nav--links {
+    margin: 24px 0px;
+    font-size: 1.125rem;
+    font-weight: 600;
+    letter-spacing: 0.025em;
+    cursor: default;
+    transition: all 300ms ease;
+    padding-bottom: 10px;
+    border-bottom: 2px solid transparent;
+  }
+
+  .mobile__nav--links:hover {
+    color: #6415ff;
+    border-color: #6415ff;
+  }
+
+  .mobile__nav--links:first-child {
+    margin-top: 0px;
+  }
+
+  .mobile__nav--links:nth-child(6) {
+    background-color: #6415ff;
+    color: white;
+    border-radius: 9999px;
+    padding: 12px 32px;
+  }
+
+  .mobile__nav--links:nth-child(6):hover {
+    background-color: #5012ce;
+  }
+
+  .close-btn {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    padding: 20px;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+  }
+
+  .close-icon {
+    transition: all 300ms ease;
+  }
+
+  .close-icon:hover {
+    stroke: #6415ff;
+  }
+
   .nav__btn {
     display: flex;
     background-color: transparent;
     border: none;
+    cursor: pointer;
+  }
+
+  .hamburguer__btn {
+    transition: all 300ms;
+  }
+
+  .hamburguer__btn:hover {
+    stroke: #6415ff;
   }
 
   #header .row {
@@ -1719,9 +1825,9 @@ header .row {
     position: initial;
     background-color: transparent;
   }
-  
+
   .header__btn {
-    position:static !important;
+    position: static !important;
     width: 100%;
     padding: 1rem 0;
     margin-right: 0px;
@@ -1760,7 +1866,7 @@ header .row {
   }
 
   #features h1 {
-       font-size: 36px;
+    font-size: 36px;
   }
 
   .services {
@@ -1771,8 +1877,8 @@ header .row {
   }
 
   .textContainer {
-   margin-left: 0px;
-   margin-top: 1rem;
+    margin-left: 0px;
+    margin-top: 1rem;
   }
 
   #pricing h1 {
@@ -1794,7 +1900,7 @@ header .row {
   .profile__img {
     height: 4rem;
   }
-  
+
   .getstarted__btns {
     display: flex;
     flex-direction: column;
@@ -1858,7 +1964,6 @@ header .row {
 
   .footer__text--wrapper {
     margin-top: 20px;
-    
   }
 
   #getstarted {
@@ -1868,5 +1973,15 @@ header .row {
   #header .container {
     margin: 0 2rem;
   }
+}
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
 }
